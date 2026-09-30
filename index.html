@@ -1,0 +1,386 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>Product Requirements Document (PRD): AI Voice Agent</h1>
+<p><strong>Version:</strong> 2.0 (Expanded) | <strong>Status:</strong> Draft for review and approval</p>
+<hr>
+<h2>1. Vision &amp; Positioning</h2>
+<p><strong>Vision:</strong> To be the leading Arabic-first voice platform that <em>gets things done</em> (books, collects, sells, resolves) rather than one that merely &quot;answers&quot; the customer.</p>
+<p><strong>Positioning statement:</strong> <em>A voice agent that speaks your customer's dialect, works inside your systems, and keeps your data in your country.</em></p>
+<p><strong>Competitive equation:</strong> Global competitors are technically strong in English but weak in dialects, local integrations, and data sovereignty. We combine all three, then add a layer of <strong>guaranteed outcomes</strong> (pricing and measurement based on results delivered).</p>
+<hr>
+<h2>2. Core Values (What Makes Us Different)</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>How it shows up in the product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Arabic-First</strong></td>
+<td>Dialect is the foundation of the architecture, not an add-on</td>
+<td>ASR/TTS models tuned for dialects, trained on local data</td>
+</tr>
+<tr>
+<td><strong>Outcomes, Not Conversations</strong></td>
+<td>We are measured by what is actually accomplished</td>
+<td>Pricing and dashboards based on the &quot;resolved call&quot;</td>
+</tr>
+<tr>
+<td><strong>Trust by Design</strong></td>
+<td>Privacy and sovereignty from day one</td>
+<td>Local data residency, encryption, BYOK, On-Prem mode</td>
+</tr>
+<tr>
+<td><strong>Cultural Intelligence</strong></td>
+<td>Understands the regional context</td>
+<td>Prayer times, Ramadan hours, Hijri calendar, honorifics and greetings, official holidays</td>
+</tr>
+<tr>
+<td><strong>Human in the Loop</strong></td>
+<td>AI serves the team; it doesn't replace it</td>
+<td>Warm handoff to a human agent with full context summary</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Every decision is justified and auditable</td>
+<td>Decision log, knowledge-base source cited for each answer</td>
+</tr>
+<tr>
+<td><strong>Speed to Value</strong></td>
+<td>From sign-up to first real call, fast</td>
+<td>Working agent in 15 minutes via industry templates</td>
+</tr>
+<tr>
+<td><strong>Continuous Improvement</strong></td>
+<td>Every call makes the agent smarter</td>
+<td>Supervised learning loop with human approval</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Expanded Feature Tree</h2>
+<h3>Tier 1 — Core (MVP)</h3>
+<p><strong>Already in your plan (retained):</strong> Sub-500ms latency, Smart Barge-in, dialects + MSA + English, API &amp; Webhooks, session management.</p>
+<p><strong>Additions essential to MVP success:</strong></p>
+<ul>
+<li><strong>Semantic Turn Detection:</strong> doesn't interrupt someone who is thinking, and doesn't wait too long after they finish.</li>
+<li><strong>Number &amp; name accuracy:</strong> pronounces and understands IDs, phone numbers, and dates (Hijri/Gregorian), spells Arabic names, and performs a <strong>verbal read-back</strong> before any action.</li>
+<li><strong>Voicemail/IVR detection + DTMF support</strong> (inbound and outbound calls).</li>
+<li><strong>Warm Transfer:</strong> instant summary delivered to the human agent before pickup.</li>
+<li><strong>Call recording + transcription + automatic summary</strong> for every call.</li>
+<li><strong>Telephony:</strong> SIP Trunking and local numbers through licensed telecom providers.</li>
+<li><strong>Agent Studio:</strong> no-code builder + prompt editing, Sandbox testing, versioning with rollback.</li>
+<li><strong>Disclosure &amp; consent:</strong> automatic notice of recording and that the caller is speaking with AI.</li>
+</ul>
+<h3>Tier 2 — Advanced</h3>
+<p><strong>Already in your plan:</strong> Persistent Memory, Sentiment Analysis, Proactive Responses, WhatsApp triggers.</p>
+<p><strong>Additions:</strong></p>
+<ul>
+<li><strong>Multi-Agent Orchestration:</strong> specialized agents (reception → sales → support → collections) hand off to one another seamlessly.</li>
+<li><strong>Safe action execution (Tool Calling):</strong> confirmation before sensitive operations (payment, cancellation, data changes) and permission limits per agent.</li>
+<li><strong>RAG with citations:</strong> every answer is tied to a knowledge-base passage; if no answer exists, the agent says &quot;I don't know&quot; and escalates.</li>
+<li><strong>Agent Copilot for human staff:</strong> real-time suggestions, summarization, and automatic CRM updates during their calls.</li>
+<li><strong>Live monitoring dashboard:</strong> listen in, whisper to the agent, or take over the call instantly.</li>
+<li><strong>A/B testing</strong> of prompts and voices, with impact measured on outcomes.</li>
+<li><strong>Smart outbound calling:</strong> campaigns, best time to call (respects prayer times and working hours), smart retries, and compliance with do-not-disturb lists.</li>
+</ul>
+<h3>Tier 3 — Competitive Innovations (The Moat)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Innovation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Dialect Mirroring</strong></td>
+<td>Automatically detects the caller's dialect (Najdi, Hijazi, Gulf, Egyptian, Levantine, Maghrebi) and responds in a close match</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Code-Switching</strong></td>
+<td>Understands mixed sentences such as &quot;I want to book an appointment tomorrow&quot; said half in Arabic, half in English, and replies just as naturally</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Languages for the expat workforce and visitors</strong></td>
+<td>English, Hindi, French, Indonesian, Portuguese, Urdu, Tagalog, Bengali, Turkish (crucial for tourism, healthcare, and international services)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Emotion-Aware TTS</strong></td>
+<td>Adaptive tone: empathy when the customer is angry, enthusiasm when they're buying, with natural backchanneling</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Simulation Lab</strong></td>
+<td>Thousands of synthetic test calls with personas (angry, rushed, noisy line, difficult dialect) before deployment, plus regression tests on every change</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Auto-QA on 100% of calls</strong></td>
+<td>Automated scoring of compliance, accuracy, and tone instead of reviewing a small sample</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Self-Improvement Loop</strong></td>
+<td>Detects knowledge-base gaps and frequent unanswered questions, and proposes answers for approval</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Dual Verification: Voice Biometrics + Digital Identity</strong></td>
+<td>Voiceprint plus verification via Nafath (subject to eligibility), with voice spoofing and deepfake detection (Anti-Spoofing)</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Sovereign Deployment</strong></td>
+<td>Local cloud / On-Prem / Hybrid, data residency, customer-owned encryption keys (BYOK), automatic PII redaction</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Industry Packs</strong></td>
+<td>Ready-made agents for clinics, real estate, e-commerce, restaurants, collections, and more, with business logic, integrations, and a starter knowledge base included</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>In-Call Payments</strong></td>
+<td>Secure payment link or DTMF entry with card data masking (PCI-compliant)</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Brand Voice Studio</strong></td>
+<td>A company-specific voice (cloned with documented consent, plus an audio watermark to prevent misuse)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Multi-Provider Routing</strong></td>
+<td>Automatic failover to a backup ASR/LLM/TTS provider during outages, and routing by cost and quality</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Outcome Analytics</strong></td>
+<td>Cost per resolved call, First Contact Resolution (FCR), topic clustering, Voice of Customer (VoC), and before/after comparison</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Marketplace</strong></td>
+<td>Templates, integrations, and voices from partners and developers, with revenue sharing</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>4. Expanded Integrations</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Integrations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM &amp; Support</td>
+<td>Salesforce, HubSpot, Zendesk, Zoho, Freshdesk, Odoo</td>
+</tr>
+<tr>
+<td>E-Commerce</td>
+<td>Shopify, WooCommerce, Salla, Zid</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>WhatsApp Business API, SMS (Unifonic, Taqnyat), Email, Instagram DM</td>
+</tr>
+<tr>
+<td>Payments</td>
+<td>Mada, Apple Pay, STC Pay, Tabby, Tamara, Moyasar, HyperPay, PayTabs, Sadad</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>Nafath (subject to eligibility requirements)</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>Clinic systems (HIS), NPHIES for insurance</td>
+</tr>
+<tr>
+<td>Addresses &amp; Maps</td>
+<td>National Address (SPL), Google Maps</td>
+</tr>
+<tr>
+<td>Calendar &amp; Office</td>
+<td>Google Calendar, Outlook</td>
+</tr>
+<tr>
+<td>ERP &amp; Invoicing</td>
+<td>SAP, Oracle, e-invoicing (ZATCA)</td>
+</tr>
+<tr>
+<td>Existing contact centers</td>
+<td>Genesys, Avaya, Cisco, Twilio, Vonage (to plug the agent into current infrastructure)</td>
+</tr>
+<tr>
+<td>Developers</td>
+<td>REST API, Webhooks, SDKs (JS/Python), MCP, Zapier/Make/n8n</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>5. Use Cases (In Addition to Healthcare, E-Commerce, and Real Estate)</h2>
+<ul>
+<li><strong>Banking &amp; Finance:</strong> friendly collections, card activation, account inquiries (with voice verification).</li>
+<li><strong>Telecom:</strong> plan renewals, complaints, first-line technical support.</li>
+<li><strong>Restaurants &amp; Delivery:</strong> orders, reservations, and tracking.</li>
+<li><strong>Automotive:</strong> maintenance booking, periodic reminders, post-service follow-up.</li>
+<li><strong>Government Services:</strong> appointment booking, transaction follow-up, general inquiries.</li>
+<li><strong>Tourism, Hotels &amp; Umrah:</strong> multilingual bookings and inquiries.</li>
+<li><strong>Insurance:</strong> claims, policy renewals, coverage inquiries.</li>
+<li><strong>Education &amp; Logistics:</strong> enrollment and inquiries, delivery coordination and rescheduling.</li>
+</ul>
+<hr>
+<h2>6. Non-Functional Requirements (Targets to Be Verified by Testing)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response latency</td>
+<td>P50 &lt; 500ms and P95 &lt; 900ms</td>
+</tr>
+<tr>
+<td>Barge-in detection</td>
+<td>&lt; 200ms</td>
+</tr>
+<tr>
+<td>Recognition accuracy (WER)</td>
+<td>&lt; 12% on target dialects, independently tested</td>
+</tr>
+<tr>
+<td>Hallucination rate on knowledge-base questions</td>
+<td>&lt; 1%</td>
+</tr>
+<tr>
+<td>Task success in ready-made packs</td>
+<td>≥ 85%</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>99.95%</td>
+</tr>
+<tr>
+<td>Concurrency</td>
+<td>10,000 concurrent calls (phased)</td>
+</tr>
+<tr>
+<td>Security &amp; compliance</td>
+<td>Personal Data Protection Law (PDPL), NCA cybersecurity controls, PCI DSS for payments, ISO 27001 / SOC 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>7. Business Model &amp; Pricing</h2>
+<ul>
+<li><strong>Outcome-based pricing (a strong marketing innovation):</strong> the customer pays per resolved call or confirmed appointment, not just per minute, which removes trial risk for them.</li>
+<li><strong>Tiers:</strong> Starter (small businesses) / Growth / Enterprise (with data sovereignty and SLA).</li>
+<li><strong>Platform fee + usage</strong> for large customers.</li>
+<li><strong>Professional services</strong> for on-premises deployment and pack customization.</li>
+<li><strong>Marketplace:</strong> a share of template and integration sales.</li>
+</ul>
+<hr>
+<h2>8. Success Metrics (KPIs)</h2>
+<ul>
+<li><strong>For the customer:</strong> Containment rate, FCR, predicted CSAT, cost per resolved call, reduced wait times.</li>
+<li><strong>For the product:</strong> Time-to-Deploy, human handoff rate, critical error rate, developer satisfaction.</li>
+<li><strong>For the business:</strong> Monthly Recurring Revenue (MRR), Net Revenue Retention (NRR), revenue from outcome-based billing, number of active packs.</li>
+</ul>
+<hr>
+<h2>9. Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0–3 months (MVP)</strong></td>
+<td>All of Tier 1 + two ready packs (clinics, online stores) + WhatsApp + Salla/Zid + two dialects</td>
+</tr>
+<tr>
+<td><strong>3–6 months</strong></td>
+<td>Copilot, live monitoring, Simulation Lab, Auto-QA, smart outbound, all major dialects</td>
+</tr>
+<tr>
+<td><strong>6–12 months</strong></td>
+<td>Voice biometrics + Nafath, in-call payments, Voice Studio, banking and real estate packs</td>
+</tr>
+<tr>
+<td><strong>12+ months</strong></td>
+<td>Sovereign/On-Prem deployment, Marketplace, expansion to other regional markets, certified compliance (ISO/SOC)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>10. Risks &amp; Mitigation</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weak accuracy on rarer dialects</td>
+<td>Consent-based local data collection, model tuning, Simulation Lab</td>
+</tr>
+<tr>
+<td>Hallucination or wrong action</td>
+<td>Constrained RAG, confirmation before actions, permission limits</td>
+</tr>
+<tr>
+<td>Data leak or regulatory violation</td>
+<td>Local data residency, BYOK, PII redaction, periodic legal review</td>
+</tr>
+<tr>
+<td>Misuse of cloned voices</td>
+<td>Documented consent, watermarking, deepfake detection</td>
+</tr>
+<tr>
+<td>Dependence on a single provider</td>
+<td>Multi-Provider Routing</td>
+</tr>
+<tr>
+<td>Staff resistance to automation</td>
+<td>Copilot that serves them, warm handoff, training</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>11. Compliance &amp; Ethics</h2>
+<ul>
+<li>Clear disclosure to the caller that they are speaking with AI, and their right to request a human at any moment.</li>
+<li>Explicit consent to recording, with a defined retention period.</li>
+<li>No use of customer data to train shared models without consent.</li>
+<li><strong>Note:</strong> The regulations mentioned (PDPL, NCA, telecom regulator and central bank rules) need review by legal counsel before launch to confirm current requirements.</li>
+</ul>
+<hr>
+<h2>12. Suggested Next Steps</h2>
+<ol>
+<li>Interview 10–15 prospective customers in two target sectors to validate priorities.</li>
+<li>Build a single-dialect prototype and measure actual WER and latency.</li>
+<li>Run a paid pilot with 2–3 customers using outcome-based pricing.</li>
+<li>Select providers (ASR / LLM / TTS / Telephony) after comparative testing on dialects.</li>
+</ol>
+
+</body></html>
